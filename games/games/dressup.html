@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dress-Up - Gingersnaps</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="game.css">
+    <link rel="stylesheet" href="dressup.css">
+</head>
+<body>
+    <div class="glitch-overlay"></div>
+    
+    <div class="game-container">
+        <!-- Game Header -->
+        <div class="game-header">
+            <a href="../games.html" class="back-btn">← BACK</a>
+            <h1 class="glitch-text" data-text="DRESS-UP">DRESS-UP</h1>
+        </div>
+
+        <!-- Game Content -->
+        <div class="dressup-game">
+            <!-- Character Display -->
+            <div class="character-display">
+                <div class="character-screen">
+                    <div class="character-base">
+                        <div class="char-head">◯</div>
+                        <div class="char-body">║</div>
+                        <div class="char-legs">╱╲</div>
+                    </div>
+                    <div class="outfit-display">
+                        <span class="outfit-item" id="headItem">-</span>
+                        <span class="outfit-item" id="bodyItem">-</span>
+                        <span class="outfit-item" id="legsItem">-</span>
+                    </div>
+                </div>
+                <div class="character-mood" id="characterMood">neutral</div>
+            </div>
+
+            <!-- Outfit Selection -->
+            <div class="outfit-selector">
+                <div class="category">
+                    <h3>HEADS</h3>
+                    <div class="items-grid" id="headItems">
+                        <button class="item-btn" onclick="equipItem('head', '✿')">FLOWER CROWN</button>
+                        <button class="item-btn" onclick="equipItem('head', '👑')">SKULL CROWN</button>
+                        <button class="item-btn" onclick="equipItem('head', '🎀')">BOW</button>
+                        <button class="item-btn" onclick="equipItem('head', '⚡')">LIGHTNING</button>
+                    </div>
+                </div>
+
+                <div class="category">
+                    <h3>BODIES</h3>
+                    <div class="items-grid" id="bodyItems">
+                        <button class="item-btn" onclick="equipItem('body', '❤')">HEART DRESS</button>
+                        <button class="item-btn" onclick="equipItem('body', '◆')">DIAMOND SUIT</button>
+                        <button class="item-btn" onclick="equipItem('body', '█')">VOID CLOAK</button>
+                        <button class="item-btn" onclick="equipItem('body', '⚙')">GEAR JACKET</button>
+                    </div>
+                </div>
+
+                <div class="category">
+                    <h3>LEGS</h3>
+                    <div class="items-grid" id="legsItems">
+                        <button class="item-btn" onclick="equipItem('legs', '♪')">SOCKS</button>
+                        <button class="item-btn" onclick="equipItem('legs', '█')">BOOTS</button>
+                        <button class="item-btn" onclick="equipItem('legs', '~')">CHAINS</button>
+                        <button class="item-btn" onclick="equipItem('legs', '✕')">STRIPPED</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Save Outfit -->
+            <div class="save-outfit">
+                <input type="text" id="outfitName" placeholder="Name your outfit...">
+                <button class="btn btn-primary" onclick="saveOutfit()">SAVE</button>
+                <button class="btn btn-secondary" onclick="clearOutfit()">CLEAR</button>
+            </div>
+
+            <!-- Saved Outfits -->
+            <div class="saved-outfits">
+                <h3>SAVED OUTFITS</h3>
+                <div id="outfitsList" class="outfits-list"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/main.js"></script>
+    <script src="dressup.js"></script>
+</body>
+</html>
