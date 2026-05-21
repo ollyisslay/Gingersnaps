@@ -1,0 +1,287 @@
+/* ===== DRESS-UP GAME STYLES ===== */
+
+.dressup-game {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.character-display {
+    background: linear-gradient(135deg, rgba(255, 0, 127, 0.2), rgba(26, 0, 51, 0.8));
+    border: 2px solid var(--glitch-magenta);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 0 20px rgba(255, 0, 127, 0.2);
+    position: relative;
+}
+
+.character-display::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.1),
+        rgba(0, 0, 0, 0.1) 1px,
+        transparent 1px,
+        transparent 2px
+    );
+    pointer-events: none;
+}
+
+.character-screen {
+    position: relative;
+    z-index: 2;
+    width: 150px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+    border: 2px solid var(--glitch-cyan);
+    background: rgba(0, 0, 0, 0.3);
+    padding: 1rem;
+}
+
+.character-base {
+    font-family: monospace;
+    font-size: 2rem;
+    color: var(--glitch-cyan);
+    text-shadow: 0 0 10px var(--glitch-cyan);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    line-height: 1.2;
+}
+
+.char-head {
+    font-size: 2.5rem;
+}
+
+.char-body {
+    font-size: 1.8rem;
+}
+
+.char-legs {
+    font-size: 1.5rem;
+    letter-spacing: 0.5rem;
+}
+
+.outfit-display {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.outfit-item {
+    font-size: 1.5rem;
+    color: var(--glitch-magenta);
+    text-shadow: 0 0 10px var(--glitch-magenta);
+    font-weight: bold;
+}
+
+@keyframes outfit-change {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.1); }
+}
+
+.character-mood {
+    font-family: var(--font-pixel);
+    font-size: 0.8rem;
+    color: var(--glitch-cyan);
+    text-shadow: 0 0 5px var(--glitch-cyan);
+    position: relative;
+    z-index: 2;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--glitch-cyan);
+    background: rgba(0, 0, 0, 0.3);
+}
+
+/* Outfit Selector */
+.outfit-selector {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    position: relative;
+    z-index: 2;
+}
+
+.category {
+    background: rgba(0, 0, 0, 0.3);
+    border: 2px solid var(--glitch-cyan);
+    padding: 1rem;
+}
+
+.category h3 {
+    font-family: var(--font-pixel);
+    font-size: 0.85rem;
+    color: var(--glitch-cyan);
+    text-shadow: 0 0 5px var(--glitch-cyan);
+    margin-bottom: 1rem;
+}
+
+.items-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+}
+
+.item-btn {
+    padding: 0.75rem;
+    background: linear-gradient(135deg, rgba(255, 0, 127, 0.2), rgba(0, 100, 100, 0.2));
+    border: 1px solid var(--glitch-magenta);
+    color: var(--ghost);
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 5px rgba(255, 0, 127, 0.2);
+}
+
+.item-btn:hover {
+    background: linear-gradient(135deg, rgba(255, 0, 127, 0.4), rgba(0, 100, 100, 0.4));
+    border-color: var(--glitch-cyan);
+    box-shadow: 0 0 15px var(--glitch-cyan);
+    transform: scale(1.05);
+}
+
+/* Save Outfit */
+.save-outfit {
+    display: flex;
+    gap: 0.5rem;
+    position: relative;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 1rem;
+    border: 2px solid var(--glitch-magenta);
+}
+
+#outfitName {
+    flex: 1;
+    padding: 0.75rem;
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--glitch-cyan);
+    color: var(--ghost);
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+}
+
+#outfitName::placeholder {
+    color: rgba(232, 213, 255, 0.5);
+}
+
+.save-outfit .btn {
+    padding: 0.75rem 1rem;
+    font-size: 0.8rem;
+}
+
+/* Saved Outfits */
+.saved-outfits {
+    position: relative;
+    z-index: 2;
+}
+
+.saved-outfits h3 {
+    font-family: var(--font-pixel);
+    font-size: 0.9rem;
+    color: var(--glitch-cyan);
+    text-shadow: 0 0 5px var(--glitch-cyan);
+    margin-bottom: 1rem;
+}
+
+.outfits-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.outfit-card {
+    display: grid;
+    grid-template-columns: 80px 1fr auto;
+    gap: 1rem;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--glitch-cyan);
+    padding: 0.75rem;
+}
+
+.outfit-preview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 1rem;
+}
+
+.outfit-name {
+    color: var(--ghost);
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+}
+
+.outfit-actions {
+    display: flex;
+    gap: 0.25rem;
+}
+
+.small-btn {
+    padding: 0.4rem 0.6rem;
+    background: rgba(0, 255, 255, 0.1);
+    border: 1px solid var(--glitch-cyan);
+    color: var(--ghost);
+    font-family: var(--font-pixel);
+    font-size: 0.65rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.small-btn:hover {
+    background: rgba(0, 255, 255, 0.3);
+    box-shadow: 0 0 10px var(--glitch-cyan);
+}
+
+.small-btn.delete {
+    border-color: var(--blood-red);
+}
+
+.small-btn.delete:hover {
+    background: rgba(102, 0, 0, 0.3);
+    box-shadow: 0 0 10px var(--blood-red);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .dressup-game {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .items-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .outfit-card {
+        grid-template-columns: 60px 1fr auto;
+    }
+
+    .character-screen {
+        width: 120px;
+        height: 200px;
+    }
+
+    .save-outfit {
+        flex-direction: column;
+    }
+}
