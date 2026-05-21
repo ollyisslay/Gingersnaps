@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Care - Gingersnaps</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/pet.css">
+</head>
+<body>
+    <div class="glitch-overlay"></div>
+    
+    <div class="container">
+        <!-- Navigation -->
+        <nav class="navbar">
+            <div class="nav-content">
+                <h1 class="logo glitch-text" data-text="GINGERSNAPS">GINGERSNAPS</h1>
+                <ul class="nav-links">
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="games.html">GAMES</a></li>
+                    <li><a href="pet.html" class="active">PET</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                </ul>
+                <div class="scanlines"></div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <section class="pet-header">
+                <h2 class="glitch-text" data-text="CARE FOR HER">CARE FOR HER</h2>
+                <p>She depends on you. Don't let her down.</p>
+                <div class="glitch-divider"></div>
+            </section>
+
+            <!-- Pet Container -->
+            <section class="pet-container">
+                <!-- Pet Display -->
+                <div class="pet-display">
+                    <div class="pet-screen">
+                        <div class="pet-canvas">
+                            <div class="pet-character" id="petCharacter">
+                                  ▲<br>
+                                 ▓▓▓<br>
+                                ▓ · ▓<br>
+                                ▓ · ▓<br>
+                                 ▓▓▓
+                            </div>
+                            <div class="pet-emotion" id="petEmotion">happy</div>
+                        </div>
+                        <div class="screen-border"></div>
+                    </div>
+
+                    <!-- Pet Stats -->
+                    <div class="pet-stats">
+                        <div class="stat">
+                            <label>HUNGER</label>
+                            <div class="stat-bar">
+                                <div class="stat-fill" id="hungerBar" style="width: 80%"></div>
+                            </div>
+                            <span id="hungerValue">80</span>
+                        </div>
+                        <div class="stat">
+                            <label>HAPPINESS</label>
+                            <div class="stat-bar">
+                                <div class="stat-fill happiness" id="happinessBar" style="width: 70%"></div>
+                            </div>
+                            <span id="happinessValue">70</span>
+                        </div>
+                        <div class="stat">
+                            <label>ENERGY</label>
+                            <div class="stat-bar">
+                                <div class="stat-fill energy" id="energyBar" style="width: 60%"></div>
+                            </div>
+                            <span id="energyValue">60</span>
+                        </div>
+                        <div class="stat">
+                            <label>AFFECTION</label>
+                            <div class="stat-bar">
+                                <div class="stat-fill affection" id="affectionBar" style="width: 50%"></div>
+                            </div>
+                            <span id="affectionValue">50</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interaction Panel -->
+                <div class="interaction-panel">
+                    <h3>INTERACTIONS</h3>
+                    <div class="action-grid">
+                        <button class="action-btn feed" onclick="petAction('feed')">
+                            <span class="action-icon">🍪</span>
+                            FEED
+                        </button>
+                        <button class="action-btn play" onclick="petAction('play')">
+                            <span class="action-icon">🎮</span>
+                            PLAY
+                        </button>
+                        <button class="action-btn rest" onclick="petAction('rest')">
+                            <span class="action-icon">💤</span>
+                            REST
+                        </button>
+                        <button class="action-btn love" onclick="petAction('love')">
+                            <span class="action-icon">💕</span>
+                            LOVE
+                        </button>
+                    </div>
+
+                    <!-- Pet Name -->
+                    <div class="pet-name-section">
+                        <label for="petName">HER NAME:</label>
+                        <input type="text" id="petName" placeholder="Enter name..." maxlength="15">
+                        <button class="btn btn-primary" onclick="setPetName()">SET NAME</button>
+                    </div>
+
+                    <!-- Log -->
+                    <div class="action-log">
+                        <h4>LOG</h4>
+                        <div id="logContainer">
+                            <p>She appears. Waiting for your actions...</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Warning -->
+            <section class="pet-warning">
+                <h3 class="glitch-text" data-text="WARNING">⚠ WARNING ⚠</h3>
+                <p>If you neglect her for too long, something bad will happen...</p>
+                <p>Keep all her stats above 20 or face consequences.</p>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p class="glitch-text" data-text="GINGERSNAPS © 2026">GINGERSNAPS © 2026</p>
+            <div class="scanlines"></div>
+        </footer>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/pet.js"></script>
+</body>
+</html>
